@@ -1,29 +1,41 @@
 {
   "editor.detectIndentation": false,
+  "editor.formatOnType": true,
+  "window.zoomLevel": 0,
   "git.enableSmartCommit": true,
   "git.autofetch": true,
   "liveServer.settings.donotShowInfoMsg": true,
   "editor.minimap.enabled": false,
   "editor.fontSize": 14,
   "editor.tabSize": 2,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.quickSuggestionsDelay": 500,
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.parameterHints.enabled": false,
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
   "terminal.explorerKind": "external",
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.shell.osx": "/bin/zsh",
   "terminal.integrated.fontFamily": "Inconsolata for Powerline",
-  "window.zoomLevel": 0,
-  "editor.parameterHints.enabled": false,
-  "editor.suggest.snippetsPreventQuickSuggestions": false,
   "html.suggest.html5": false,
   "explorer.confirmDragAndDrop": false,
-  "editor.multiCursorModifier": "ctrlCmd",
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
+  "liveSassCompile.settings.formats": [
+    {
+      "savePath": "/myapp/public/css/",
+      "format": "expanded"
+    }
+  ],
+  "liveSassCompile.settings.excludeList": [ 
+    "**/node_modules/**",
+    ".vscode/**",
+    "**/other/**"
+  ],
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all",
-  "editor.quickSuggestionsDelay": 500,
-  "editor.wordWrap": "on",
-  "editor.formatOnSave": true,
   "eslint.autoFixOnSave": true,
   "emmet.triggerExpansionOnTab": true
 }
