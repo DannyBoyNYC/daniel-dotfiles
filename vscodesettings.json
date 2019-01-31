@@ -1,0 +1,29 @@
+{
+  "editor.detectIndentation": false,
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.minimap.enabled": false,
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "terminal.explorerKind": "external",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.fontFamily": "Inconsolata for Powerline",
+  "window.zoomLevel": 0,
+  "editor.parameterHints.enabled": false,
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "html.suggest.html5": false,
+  "explorer.confirmDragAndDrop": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "editor.quickSuggestionsDelay": 500,
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "emmet.triggerExpansionOnTab": true
+}
