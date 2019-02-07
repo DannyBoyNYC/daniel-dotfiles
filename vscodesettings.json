@@ -1,19 +1,28 @@
 {
   "editor.detectIndentation": false,
   "editor.formatOnType": true,
-  "window.zoomLevel": 0,
-  "git.enableSmartCommit": true,
-  "git.autofetch": true,
-  "liveServer.settings.donotShowInfoMsg": true,
   "editor.minimap.enabled": false,
   "editor.fontSize": 14,
   "editor.tabSize": 2,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.quickSuggestionsDelay": 500,
   "editor.wordWrap": "on",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[html]": {
+    "editor.formatOnSave": false
+  },
+  "[css]": {
+    "editor.formatOnSave": true
+  },
   "editor.parameterHints.enabled": false,
   "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "window.zoomLevel": 0,
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "liveServer.settings.donotShowInfoMsg": true,
   "terminal.explorerKind": "external",
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.shell.osx": "/bin/zsh",
