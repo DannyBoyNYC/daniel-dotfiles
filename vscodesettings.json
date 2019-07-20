@@ -29,7 +29,11 @@
   "terminal.integrated.fontFamily": "Inconsolata for Powerline",
   "html.suggest.html5": false,
   "explorer.confirmDragAndDrop": false,
+    "emmet.triggerExpansionOnTab": true,
   "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
   "liveSassCompile.settings.formats": [
@@ -45,6 +49,5 @@
   ],
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all",
-  "eslint.autoFixOnSave": true,
-  "emmet.triggerExpansionOnTab": true
+  "eslint.autoFixOnSave": true
 }
