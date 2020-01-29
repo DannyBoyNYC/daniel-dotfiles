@@ -1,5 +1,7 @@
 # Notes
 
+Color settings for VS Code in `.vscode`
+
 ```sh
 type gc
 ```

@@ -1,0 +1,19 @@
+// express green
+// {
+//   "workbench.colorCustomizations": {
+//     "titleBar.activeForeground": "#ffffffCC",
+//     "titleBar.inactiveForeground": "#ffffffCC",
+//     "titleBar.activeBackground": "#75ad63",
+//     "titleBar.inactiveBackground": "#75ad63cc"
+//   }
+// }
+
+// react blue
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#000000CC",
+    "titleBar.inactiveForeground": "#000000CC",
+    "titleBar.activeBackground": "#61dafb",
+    "titleBar.inactiveBackground": "#61dafbCC"
+  }
+}
