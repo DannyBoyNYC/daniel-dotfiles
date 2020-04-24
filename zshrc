@@ -93,10 +93,15 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-alias ohmyupgrade="upgrade_oh_my_zsh"
+# Example aliases
+
 alias zload=". ~/.zshrc"
-alias zshconfig="code ~/.zshrc"
+alias zcode="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
+
+alias pg="echo 'Pinging Google' && ping www.google.com";
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 alias gs="git status"
 alias glog='git log --graph --all --decorate'
@@ -117,6 +122,16 @@ alias gcb="git checkout -b" # + branch name
 # Python server 
 alias serve="python -m SimpleHTTPServer"
 
+# Ruby - from the jekyl install page
+export PATH=/usr/local/opt/ruby/bin:$PATH
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Ceddia script for quick react projects
+function cpa() {
+  cp -a /Users/danieldeverell/Documents/my-project-template $1
+}
