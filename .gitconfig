@@ -1,0 +1,17 @@
+[user]
+	email = daniel.deverell@gmail.com
+	name = DannyBoyNYC
+[pager]
+	branch = false
+[alias]
+	pum = !git push -u origin master
+	adc = !git add -A && git commit -m
+	co = checkout
+[core]
+	excludesfile = /Users/danieldeverell/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
