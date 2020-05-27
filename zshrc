@@ -133,5 +133,12 @@ export NVM_DIR="$HOME/.nvm"
 
 # Ceddia script for quick react projects
 function cpa() {
-  cp -a /Users/danieldeverell/Documents/my-project-template $1
+  cp -a /Users/danieldeverell/SynologyDrive/project-template-react $1
+  cd $1
+  yarn
+}
+# Script for quick Vanilla JS projects
+function vjs() {
+  cp -a /Users/danieldeverell/SynologyDrive/project-template-vjs $1
+  cd $1
 }
