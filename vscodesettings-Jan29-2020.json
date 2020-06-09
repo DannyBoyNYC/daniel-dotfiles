@@ -44,6 +44,9 @@
     ".vscode/**",
     "**/other/**"
   ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all",
   "emmet.triggerExpansionOnTab": true,
