@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iFrame Playground</title>
+  </head>
+  <body>
+    <h1>Parent</h1>
+
+    <ul>
+      <li>
+        <p>
+          iframe detects when its content is loaded and broadcasts that to the
+          parent page
+        </p>
+      </li>
+      <li>
+        <p>
+          dynamically create the dpa script in the iFrame page and run the
+          initialization
+        </p>
+      </li>
+      <li>
+        <p>send the metrics from the iFrame to the top frame</p>
+      </li>
+      <li>
+        <p>send the metrics from the top to endpoint</p>
+      </li>
+    </ul>
+    <hr />
+    <iframe
+      id="my-iframe-id"
+      name="my-iframe-name"
+      src="./child/child.html"
+      frameborder="1"
+    ></iframe>
+
+    <script>
+      const myIframe = document.getElementById("my-iframe-id");
+      const domain = "http://127.0.0.1:5500";
+
+      function createAndLoadScript(src) {
+        const iframeDocument = myIframe.contentDocument;
+        let myScript = iframeDocument.createElement("script");
+        myScript.id = "dps-script";
+        myScript.src = src;
+        iframeDocument.body.appendChild(myScript);
+      }
+
+      window.addEventListener(
+        "message",
+        function (event) {
+          const origin = event.origin;
+          if (origin !== domain) return;
+          console.log("1: received MessageEvent - " + event.data);
+          createAndLoadScript("http://127.0.0.1:5500/test.js");
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

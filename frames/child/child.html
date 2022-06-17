@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Child</title>
+  </head>
+  <body>
+    <h1>Child</h1>
+    <p>
+      <a href="#top">test link</a>
+    </p>
+    <script>
+      const domain = "http://127.0.0.1:5500";
+      addEventListener("message", function (event) {
+        parent.postMessage("iframe is loaded", domain);
+      });
+    </script>
+  </body>
+</html>
