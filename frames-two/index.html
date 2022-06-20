@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iFrame Playground Two</title>
+    <style>
+      iframe {
+        width: 60vw;
+        height: 300px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Parent</h1>
+
+    <ul>
+      <li>iframe is created dynamically and appended to the DOM</li>
+      <li>run a function to append the dpa script to the iFrame</li>
+      <li>run the dpa initialization</li>
+      <li>send the metrics from the iFrame to the top frame</li>
+      <li>send the metrics from the top to endpoint</li>
+    </ul>
+
+    <button onclick="createAndLoadScript()">createAndLoadScript</button>
+
+    <hr />
+
+    <script>
+      const channel = new MessageChannel();
+      const domain = "http://127.0.0.1:8080";
+      // const iframeWindow = myIframe.contentWindow;
+
+      const iframe = document.createElement("iframe");
+      iframe.id = "my-iframe-id";
+      iframe.name = "my-iframe-name";
+      iframe.src = `./frame/child.html?rand=${Math.round(
+        Math.random() * 10000000
+      )}`;
+      if (
+        document.readyState === "complete" ||
+        document.readyState === "interactive"
+      ) {
+        document.body.appendChild(iframe);
+      } else {
+        document.addEventListener("DOMContentLoaded", () => {
+          document.body.appendChild(iframe);
+        });
+      }
+
+      function createAndLoadScript() {
+        const myIframe = document.getElementById("my-iframe-id");
+        const iframeDocument = myIframe.contentDocument;
+        let myScript = iframeDocument.createElement("script");
+        myScript.type = "text/javascript";
+        myScript.id = "dps-script";
+        myScript.src = `http://127.0.0.1:8080/dpAnalytics.js?rand=${Math.round(
+          Math.random() * 10000000
+        )}`;
+        iframeDocument.body.appendChild(myScript);
+        myIframe.addEventListener("load", onLoad);
+      }
+
+      function onLoad() {
+        // Listen for messages on port1
+        channel.port1.onmessage = onMessage;
+        // Transfer port2 to the iframe
+        iframe.contentWindow.postMessage("Hello from the main page!", "*", [
+          channel.port2,
+        ]);
+      }
+
+      // Handle messages received on port1
+      function onMessage(event) {
+        console.log("event.data", event.data);
+        // output.innerHTML = e.data;
+      }
+
+      function messageHandler(event) {
+        if (origin !== event.origin) return;
+        const eventSource = event.source;
+        if (eventSource.name === "my-iframe-name") {
+          console.log("event source name: ", eventSource.name);
+          console.log(`received message: - ${event.data}`);
+        }
+      }
+
+      window.addEventListener("message", messageHandler, false);
+    </script>
+  </body>
+</html>
